@@ -11,9 +11,9 @@ public class MovingPlatform : MonoBehaviour {
 		baseX = transform.position.x;
 	}
 
-	// Update is called once per frame
-	void Update () {
-		float dX = Mathf.PingPong (Time.time * speed, moveDelta);
-		transform.position = new Vector3 (baseX + dX, transform.position.y, transform.position.z);
+	void FixedUpdate() {
+		float dX = Mathf.PingPong(Time.time * speed, moveDelta);
+		Vector3 newPos = new Vector3(baseX + dX, transform.position.y, transform.position.z);
+		transform.position = newPos;
 	}
 }
