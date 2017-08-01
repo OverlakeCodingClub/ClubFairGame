@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveDelta: 10
-  speed: 1
+  speed: 4
 --- !u!1 &1740666574
 GameObject:
   m_ObjectHideFlags: 0
