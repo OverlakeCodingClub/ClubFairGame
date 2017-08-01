@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : PhysicsObject {
+public class MovingPlatform : MonoBehaviour {
 	public float moveDelta = 5f;
 	public float speed = 5f;
+	private float baseX = 0;
 
-	protected override void ComputeVelocity() {
-		Vector2 move = Vector2.zero;
-		float dX = Mathf.PingPong (Time.time * speed, moveDelta);
+	void Awake() {
+		baseX = transform.position.x;
+	}
 
-		move.x = dX;
-		
-
-		targetVelocity = move;
+	void FixedUpdate() {
+		float dX = Mathf.PingPong(Time.time * speed, moveDelta);
+		Vector3 newPos = new Vector3(baseX + dX, transform.position.y, transform.position.z);
+		transform.position = newPos;
 	}
 }
