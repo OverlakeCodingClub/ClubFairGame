@@ -1,2 +1,2 @@
 # ClubFairGame
-Lemme Smash
+Club Fair Game. Maybe finish some time.
